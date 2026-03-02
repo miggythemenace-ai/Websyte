@@ -1,0 +1,1214 @@
+@charset "UTF-8";
+@font-face {
+  font-family: rainyhearts;
+  src: url("../fonts/rainyhearts.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: Kulture;
+  src: url("../fonts/KultureType.otf") format("opentype"), url("../fonts/Kulture╠ê Type.otf") format("opentype");
+  font-display: swap;
+}
+@font-face {
+  font-family: SuperJoyful;
+  src: url("../fonts/Super Joyful.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: Nunito;
+  src: url("../fonts/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: BoldPix;
+  src: url("../fonts/BoldPixels.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: FairFax;
+  src: url("../fonts/FairfaxHaxHD.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: IosevkaN;
+  src: url("../fonts/SGr-Iosevka-Regular.ttc") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: JetBrainsMono;
+  src: url("../fonts/JetBrainsMono-Light.ttf") format("truetype");
+  font-display: swap;
+}
+@font-face {
+  font-family: SourceCode;
+  src: url("../fonts/SourceCodePro-VariableFont_wght.ttf") format("truetype");
+  font-display: swap;
+}
+:root {
+  --Starlight: #fac372;
+  --Penumbra: #4e176bdf;
+  --Dawn: #f09c83;
+  --Moonlight: #cdd9ee;
+  --LinkLight: #e9f0ff;
+  --Eclipse: #13001beb;
+  --Midnight: #1a001f;
+  --Umbra: #0a0008;
+  --BabyPur: #dbc9ff;
+  --cursor-default: url(https://www.rw-designer.com/cursor-view/144663.png), auto;
+  --cursor-pointer: url(https://www.rw-designer.com/cursor-view/144662.png), pointer;
+}
+
+body.app-shell {
+  margin: 0;
+  background-image: url("../Images/background/seam.gif");
+  background-size: 200px 215px;
+  background-color: rgba(122, 0, 122, 0.6);
+  background-blend-mode: multiply;
+}
+
+body.app-shell,
+body.app-shell button,
+body.app-shell a {
+  cursor: var(--cursor-default);
+}
+
+body.app-shell button,
+body.app-shell a,
+body.app-shell .memory-image-circle,
+body.app-shell .memory-tag,
+body.app-shell .contact-btn {
+  cursor: var(--cursor-pointer);
+}
+
+body.app-shell h1,
+body.app-shell h2,
+body.app-shell h3 {
+  font-family: "Kulture";
+  text-align: center;
+  line-height: 4px;
+  letter-spacing: 2px;
+}
+
+body.app-shell p {
+  text-align: center;
+}
+
+body.app-shell html,
+body.app-shell iframe,
+body.app-shell {
+  scrollbar-color: var(--Midnight) var(--Umbra);
+  scrollbar-width: thin;
+}
+
+body.app-shell .wrapper {
+  max-width: 900px;
+  width: min(900px, 100vw - 40px);
+  min-width: 320px;
+  margin: 20px 20px 20px 260px;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+body.app-shell .header {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Eclipse);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px ridge var(--Penumbra);
+  box-shadow: 3px 3px black;
+  width: 100%;
+  box-sizing: border-box;
+  color: var(--Moonlight);
+}
+body.app-shell .header img:not(.hero-image) {
+  border-radius: 4px;
+  width: 100%;
+  border: 1px rgb(59, 0, 60) ridge;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+body.app-shell .header h1 {
+  color: var(--BabyPur);
+  text-align: right;
+  letter-spacing: 3px;
+}
+body.app-shell .header h2 {
+  text-align: right;
+  margin-top: -8px;
+  letter-spacing: 4px;
+  font-size: 65%;
+}
+body.app-shell .header .lead {
+  font-size: 16px;
+  margin-top: 8px;
+  color: var(--BabyPur);
+  font-family: "FairFax";
+  text-align: right;
+}
+
+body.app-shell .navigation {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--Eclipse);
+  padding: 12px 8px;
+  border-radius: 6px;
+  border: 1px ridge var(--Penumbra);
+  box-shadow: 3px 3px black;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  width: 230px;
+  height: calc(100vh - 41.5px);
+  overflow-y: auto;
+  z-index: 1000;
+  box-sizing: border-box;
+  scrollbar-color: transparent transparent;
+  scrollbar-width: thin;
+}
+body.app-shell .navigation img {
+  border-radius: 6px;
+  width: 100%;
+  margin-bottom: 6px;
+  padding-top: 4px;
+}
+body.app-shell .navigation a {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 12px;
+  color: var(--Moonlight);
+  text-decoration: none;
+  font-family: "FairFax";
+  border-radius: 4px;
+  margin: 7px 0 8px;
+  border-bottom: 2px dotted transparent;
+  padding-bottom: 8px;
+  transition: color 200ms ease, border-color 200ms ease, background-color 180ms ease;
+  line-height: 1.1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+body.app-shell .navigation a img {
+  height: 1.2em;
+  width: auto;
+  display: block;
+  object-fit: contain;
+  align-self: center;
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition: filter 160ms ease;
+}
+body.app-shell .navigation a:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--LinkLight);
+  border-bottom-color: rgba(255, 255, 255, 0.18);
+}
+body.app-shell .navigation a:hover img {
+  filter: brightness(1.08) saturate(1.05);
+}
+body.app-shell .navigation a#Home {
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-bottom: 16px;
+  border-bottom: none;
+  background: transparent;
+}
+body.app-shell .navigation a#Home img {
+  width: auto;
+  height: 210px;
+}
+body.app-shell .navigation a#Home:hover {
+  background: transparent;
+}
+body.app-shell .navigation a#Home:hover img {
+  filter: brightness(1.15) saturate(1.1) drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+}
+body.app-shell .navigation::-webkit-scrollbar {
+  width: 8px;
+}
+body.app-shell .navigation::-webkit-scrollbar-track {
+  background: transparent;
+}
+body.app-shell .navigation::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 6px;
+}
+body.app-shell .navigation:hover {
+  scrollbar-color: rgba(255, 255, 255, 0.08) transparent;
+}
+body.app-shell .navigation:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+body.app-shell .nav-intro {
+  font-size: 12px;
+  margin: -8px 0;
+  color: var(--BabyPur);
+  font-family: "Kulture";
+  letter-spacing: 2px;
+}
+
+body.page-home .boxes-container {
+  display: flex;
+  gap: 18px;
+  margin: 20px 0 18px;
+}
+body.page-home .box-1-3,
+body.page-home main,
+body.page-home .ContentBox {
+  background-color: rgba(19, 0, 27, 0.75);
+  border: 1px ridge var(--Penumbra);
+  box-shadow: 3px 3px black;
+  color: var(--Moonlight);
+  box-sizing: border-box;
+}
+body.page-home .box-1-3,
+body.page-home main {
+  padding: 16px;
+  border-radius: 6px;
+  min-height: 240px;
+}
+body.page-home .box-1-3 {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+body.page-home main {
+  flex: 2;
+}
+body.page-home .section-title {
+  text-align: center;
+  font-family: "Kulture";
+  letter-spacing: 2px;
+  margin: 10px 0 15px;
+}
+body.page-home .updates-heading {
+  font-size: 20px;
+  margin: 10px 0;
+}
+body.page-home .updates-heading b {
+  font-size: 32px;
+}
+body.page-home .latest-update {
+  margin-top: 14px;
+}
+body.page-home .updates-note {
+  text-align: justify;
+  margin-top: 35px;
+  font-family: "Nunito";
+}
+body.page-home .content-centered {
+  text-align: center;
+}
+body.page-home .full-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  border: 1px ridge black;
+}
+body.page-home .full-width-image {
+  width: 100%;
+}
+body.page-home .hero-image {
+  width: 100%;
+  height: 200%;
+  margin: -1px 0 35px;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  filter: sepia(0.35) hue-rotate(40deg) saturate(1.35) brightness(0.95);
+}
+body.page-home .currentHead {
+  background-color: rgba(170, 147, 220, 0.4);
+  padding: 6px 10px;
+  font-family: "Kulture", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--BabyPur);
+  border-radius: 4px 4px 0 0;
+  margin-top: 8px;
+}
+body.page-home .currentHead:first-of-type {
+  margin-top: 0;
+}
+body.page-home .currentBody {
+  background-color: rgba(12, 0, 18, 0.5);
+  padding: 10px;
+  font-family: "SourceCode", monospace;
+  font-size: 14px;
+  color: var(--Moonlight);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 0 0 4px 4px;
+  margin-bottom: 8px;
+  line-height: 1.5;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+body.page-home .currentBody a {
+  color: var(--LinkLight);
+  text-decoration: none;
+}
+body.page-home .currentBody a:hover {
+  color: var(--BabyPur);
+}
+body.page-home .Sorry {
+  font-family: "SourceCode";
+  font-size: 12px;
+  font-weight: normal;
+  margin-left: 115px;
+}
+body.page-home .logmenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+body.page-home .logmenu h2 {
+  margin: 0;
+  letter-spacing: 4px;
+  font-size: 20px;
+  color: var(--LinkLight);
+}
+body.page-home .logbox {
+  background: rgba(12, 0, 18, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 12px 14px;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  max-height: 360px;
+  overflow-y: auto;
+}
+body.page-home .logbox ul {
+  list-style: disc;
+  margin: 0;
+  padding-left: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 14px;
+  color: var(--Moonlight);
+}
+body.page-home .logbox li {
+  line-height: 1.35;
+  font-size: 16px;
+  font-family: "SourceCode";
+  margin-bottom: 6px;
+}
+body.page-home .logbox li:last-child {
+  margin-bottom: 0;
+}
+body.page-home .logbox li + li {
+  border-top: 1px dotted rgba(255, 255, 255, 0.14);
+  padding-top: 6px;
+}
+body.page-home .logbox a {
+  color: var(--LinkLight);
+  text-decoration: none;
+}
+body.page-home .logbox a:hover {
+  text-decoration: underline dotted;
+}
+body.page-home .logbox .log-separator {
+  list-style: none;
+  border-top: 1px dotted rgba(255, 255, 255, 0.25);
+  margin: 6px 0 4px;
+  padding: 0;
+}
+body.page-home .Right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 530px;
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  z-index: 900;
+  overflow: hidden;
+}
+body.page-home .ContentBox {
+  border-radius: 8px;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+  overflow-y: auto;
+}
+body.page-home .ContentBox .title-bar {
+  background-color: rgba(48, 38, 72, 0.643);
+  border: 1px ridge rgba(92, 52, 157, 0.5);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 15px;
+}
+body.page-home .ContentBox .title-bar-text p {
+  letter-spacing: 6px;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 30px;
+  color: var(--Moonlight);
+}
+body.page-home .CurrentBody.New {
+  background-color: rgba(12, 0, 18, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 6px;
+  padding: 10px 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  margin: 20px 0 8px;
+  border-bottom: 1px dotted var(--Moonlight);
+  text-align: center;
+}
+body.page-home .CurrentBody.New:hover {
+  background-color: rgba(170, 147, 220, 0.15);
+  border-bottom-color: var(--BabyPur);
+}
+body.page-home .CurrentBody.New img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px ridge rgba(0, 0, 0, 0.4);
+  display: block;
+}
+body.page-home .CurrentBody.New p {
+  margin: 0;
+  font-family: "SourceCode", monospace;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+body.page-home .CurrentBody.New a {
+  color: var(--LinkLight);
+  text-decoration: none;
+}
+body.page-home .CurrentBody.New a:hover {
+  color: var(--BabyPur);
+  text-decoration: underline;
+}
+body.page-home .stats-panel {
+  position: fixed;
+  bottom: 22px;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  transition: right 300ms ease;
+}
+body.page-home .stats-panel.collapsed {
+  right: -170px;
+}
+body.page-home .stats-panel.collapsed .arrow {
+  transform: rotate(180deg);
+}
+body.page-home .stats-toggle {
+  background: var(--Eclipse);
+  border: 1px ridge var(--Penumbra);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  padding: 12px 8px;
+  color: var(--Moonlight);
+  font-size: 18px;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
+  transition: background-color 180ms ease, color 180ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 32px;
+}
+body.page-home .stats-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--LinkLight);
+}
+body.page-home .stats-toggle .arrow {
+  display: block;
+  transition: transform 300ms ease;
+}
+body.page-home .stats-content {
+  background: var(--Eclipse);
+  border: 1px ridge var(--Penumbra);
+  border-right: none;
+  padding: 12px 14px;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 140px;
+}
+body.page-home .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+body.page-home .stat-label {
+  font-family: "Kulture";
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--BabyPur);
+  opacity: 0.8;
+}
+body.page-home .stat-value {
+  font-family: "SourceCode", "FairFax", monospace;
+  font-size: 16px;
+  color: var(--LinkLight);
+  font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+  body.app-shell .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 12px auto 0;
+  }
+  body.app-shell .wrapper {
+    max-width: 1100px;
+    width: min(1100px, 100vw - 32px);
+    margin: 16px auto 24px;
+  }
+  body.page-home .Right {
+    position: static;
+    width: min(1100px, 100vw - 32px);
+    height: auto;
+    margin: 20px auto 0;
+  }
+  body.page-home .ContentBox {
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  body.page-home .ContentBox .title-bar-text p {
+    font-size: 22px;
+    letter-spacing: 6px;
+  }
+}
+@media (max-width: 800px) {
+  body.app-shell .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+  body.app-shell .wrapper {
+    max-width: none;
+    width: min(1200px, 100vw - 16px);
+    margin: 12px auto 24px;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 700px) {
+  body.page-home .boxes-container {
+    flex-direction: column;
+  }
+  body.page-home .ContentBox {
+    padding: 12px;
+  }
+  body.page-home .ContentBox .title-bar-text p {
+    font-size: 18px;
+    letter-spacing: 4px;
+  }
+  body.page-home .stats-panel {
+    bottom: 10px;
+  }
+  body.page-home .stats-panel.collapsed {
+    right: -160px;
+  }
+  body.page-home .stats-content {
+    min-width: 160px;
+  }
+  body.page-home .stat-label {
+    font-size: 10px;
+  }
+  body.page-home .stat-value {
+    font-size: 14px;
+  }
+}
+body.page-index {
+  --Moonlight: #dfebff;
+  --PurpLight: #c885ff43;
+  --FlashLight: #cab6ff41;
+  --cursor-default: url(https://www.rw-designer.com/cursor-view/144663.png), auto;
+  --cursor-pointer: url(https://www.rw-designer.com/cursor-view/144662.png), pointer;
+  margin: 0;
+  background-image: url("../Images/background/seam.gif");
+  background-size: 200px 215px;
+  background-color: rgba(122, 0, 122, 0.6);
+  background-blend-mode: multiply;
+}
+body.page-index #ToDream,
+body.page-index #AndI,
+body.page-index #ButTime,
+body.page-index #AndSo {
+  font-family: "Kulture";
+  letter-spacing: 10px;
+}
+body.page-index #ToDream {
+  color: var(--PurpLight);
+  font-size: 35px;
+  margin: 35px 20px 0 50px;
+}
+body.page-index #AndI {
+  color: var(--PurpLight);
+  font-size: 20px;
+  margin: -30px 20px 0 90px;
+}
+body.page-index #ButTime,
+body.page-index #AndSo {
+  color: var(--FlashLight);
+  font-size: 15px;
+  position: fixed;
+  right: 24px;
+  text-align: justify;
+  max-width: 40ch;
+  white-space: normal;
+  margin: 0;
+  padding: 6px 10px;
+  background: transparent;
+}
+body.page-index #ButTime {
+  bottom: 80px;
+}
+body.page-index #AndSo {
+  bottom: 22px;
+}
+body.page-index .ancient-wrap {
+  display: block;
+  margin: 24px auto;
+  max-width: 1000px;
+  width: min(1000px, 100vw - 40px);
+  position: relative;
+  isolation: isolate;
+  border-radius: 4px;
+}
+body.page-index .ancient-wrap::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 7px;
+  right: -7px;
+  bottom: 8px;
+  pointer-events: none;
+  background: rgba(54, 28, 83, 0.18);
+  mix-blend-mode: overlay;
+  transition: background-color 180ms ease, opacity 180ms ease;
+  border-radius: 4px;
+}
+body.page-index .ancient-wrap:hover::after {
+  background: rgba(40, 7, 87, 0.754);
+}
+body.page-index .ancient {
+  display: block;
+  width: 100%;
+  height: 580px;
+  border-radius: 4px;
+  mix-blend-mode: multiply;
+  opacity: 0.92;
+  filter: grayscale(16%) contrast(0.98) brightness(0.96);
+  border: #0c000f 8px ridge;
+  border-color: rgba(65, 20, 85, 0.1647058824);
+}
+body.page-index a[href="Home.html"] {
+  display: block;
+  text-decoration: none;
+}
+
+@media (max-width: 1000px) {
+  body.page-index #ButTime,
+  body.page-index #AndSo {
+    position: static;
+    margin: 20px 20px 0 auto;
+    padding: 0;
+    max-width: none;
+  }
+}
+@media (max-width: 700px) {
+  body.page-index #ButTime,
+  body.page-index #AndSo {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  body.page-index #ToDream {
+    font-size: 28px;
+    margin-left: 20px;
+    letter-spacing: 6px;
+  }
+  body.page-index #AndI {
+    font-size: 16px;
+    margin-left: 20px;
+    letter-spacing: 6px;
+  }
+  body.page-index .ancient-wrap {
+    max-width: 92%;
+    width: min(92vw, 100vw - 20px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+body.page-memories {
+  --Starlight: #fac372;
+  --Penumbra: #4e176bdf;
+  --Dawn: #f09c83;
+  --Moonlight: #cdd9ee;
+  --LinkLight: #e9f0ff;
+  --Eclipse: #13001beb;
+  --Midnight: #1a001f;
+  --Umbra: #0a0008;
+  --BabyPur: #dbc9ff;
+  --cursor-default: url(https://www.rw-designer.com/cursor-view/144663.png), auto;
+  --cursor-pointer: url(https://www.rw-designer.com/cursor-view/144662.png), pointer;
+}
+@font-face {
+  font-family: JMH;
+  src: url("https://raw.githubusercontent.com/miggythemenace-ai/Stuff/main/fonts/JMH%20Typewriter.ttf");
+}
+@font-face {
+  font-family: MOM;
+  src: url("https://raw.githubusercontent.com/miggythemenace-ai/Stuff/main/fonts/Mom%C2%ABt___.ttf");
+}
+body.page-memories * {
+  box-sizing: border-box;
+}
+body.page-memories {
+  margin: 0;
+  background-image: url("https://raw.githubusercontent.com/Axiomition/Stuff/main/Images/background/seam.gif");
+  background-size: 200px 215px;
+  background-color: rgba(122, 0, 122, 0.6);
+  background-blend-mode: multiply;
+}
+body.page-memories #LAIN {
+  font-family: "MOM";
+}
+body.page-memories #TAG {
+  font-size: 25px;
+  margin-left: 0 !important;
+  text-align: left;
+}
+body.page-memories .wrapper {
+  max-width: none;
+  width: min(1200px, 100vw - 320px);
+  min-width: 320px;
+  margin: 20px 20px 20px 280px;
+  justify-content: center;
+  display: flex;
+  min-height: 11vh;
+}
+body.page-memories .boxes-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding-left: 0;
+}
+body.page-memories .memory-box {
+  margin-left: 0;
+  width: 100%;
+  max-width: 1000px;
+  background-color: rgba(19, 0, 27, 0.75);
+  padding: 24px;
+  border-radius: 6px;
+  border: 1px ridge var(--Penumbra);
+  box-shadow: 3px 3px black;
+  color: var(--Moonlight);
+  min-height: 300px;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+}
+body.page-memories .memory-box p {
+  margin: 0;
+  text-align: left;
+  font-family: "SourceCode";
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--Moonlight);
+  padding-right: 0;
+}
+body.page-memories .memory-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  margin-bottom: 20px;
+}
+body.page-memories .memory-header h2 {
+  margin: 0 0 5px;
+  text-align: left;
+  font-size: 24px;
+  color: var(--LinkLight);
+}
+body.page-memories .memory-header p {
+  margin: 0 0 10px;
+  text-align: left;
+  font-size: 12px;
+  color: var(--BabyPur);
+  opacity: 0.8;
+}
+body.page-memories .memory-header-info {
+  flex: 1;
+  min-width: 0;
+}
+body.page-memories .memory-header-info p {
+  font-size: 15px !important;
+  margin-top: 20px !important;
+}
+body.page-memories #Address,
+body.page-memories #Address2,
+body.page-memories #Message {
+  font-size: 13px !important;
+  flex-basis: 100%;
+  color: var(--BabyPur);
+  opacity: 0.6;
+}
+body.page-memories #Address {
+  margin-top: 10px !important;
+}
+body.page-memories #Address2 {
+  margin-top: -10px !important;
+}
+body.page-memories #Message {
+  font-size: 10px !important;
+  margin: -5px 0 0 2px !important;
+}
+body.page-memories .memory-image-circle {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background-color: rgba(12, 0, 18, 0.8);
+  border: 2px ridge var(--Penumbra);
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 200ms ease;
+}
+body.page-memories .memory-image-circle:hover {
+  transform: scale(1.05);
+}
+body.page-memories .memory-image-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 50%;
+  transition: opacity 400ms ease;
+}
+body.page-memories .memory-image-circle img.fade-out {
+  opacity: 0;
+}
+body.page-memories .memory-tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+body.page-memories .memory-tag {
+  background-color: rgba(170, 147, 220, 0.3);
+  color: var(--BabyPur);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-family: "Kulture";
+  border: 1px solid rgba(170, 147, 220, 0.5);
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+body.page-memories .memory-tag:hover {
+  background-color: rgba(170, 147, 220, 0.5);
+  color: var(--LinkLight);
+  border-color: rgba(170, 147, 220, 0.8);
+}
+body.page-memories .memory-tag.active {
+  background-color: rgba(170, 147, 220, 0.6);
+  color: var(--Starlight);
+  border-color: var(--Starlight);
+}
+body.page-memories .hidden {
+  display: none !important;
+}
+body.page-memories .memory-content-wrapper {
+  position: relative;
+  overflow: hidden;
+  overflow-anchor: none;
+  transition: height 220ms ease;
+}
+body.page-memories .memory-content {
+  opacity: 1;
+  transition: opacity 140ms ease;
+  will-change: opacity;
+}
+body.page-memories .memory-content.is-leaving {
+  opacity: 0;
+}
+body.page-memories .memory-content.is-entering {
+  opacity: 0;
+}
+body.page-memories .memory-section {
+  margin-bottom: 24px;
+}
+body.page-memories .memory-section h3 {
+  margin: 0 0 12px;
+  text-align: left;
+  font-size: 18px;
+  color: var(--Moonlight);
+  letter-spacing: 1px;
+}
+body.page-memories .memory-section p,
+body.page-memories .memory-section ul {
+  margin: 0 0 8px;
+  text-align: left;
+  font-size: 14px;
+  font-family: "SourceCode";
+  color: var(--Moonlight);
+  line-height: 1.5;
+}
+body.page-memories .memory-section ul {
+  padding-left: 20px;
+}
+body.page-memories .memory-section li {
+  margin-bottom: 6px;
+}
+body.page-memories .memory-section a {
+  color: var(--Moonlight);
+  text-decoration: none;
+}
+body.page-memories .memory-section a:hover {
+  text-decoration: underline;
+}
+body.page-memories .memory-contact-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+body.page-memories .contact-btn {
+  background-color: rgba(170, 147, 220, 0.25);
+  color: var(--LinkLight);
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: 1px solid rgba(170, 147, 220, 0.5);
+  font-family: "Kulture";
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+body.page-memories .contact-btn:hover {
+  background-color: rgba(170, 147, 220, 0.4);
+  color: var(--BabyPur);
+  border-color: var(--BabyPur);
+}
+body.page-memories .memory-title {
+  font-size: 65px;
+  margin-left: 0;
+  margin-bottom: 24px;
+  text-align: left;
+}
+body.page-memories .memory-name {
+  font-size: 50px;
+  text-align: left;
+}
+body.page-memories .memory-indent {
+  text-indent: 25px;
+}
+body.page-memories .memory-top-gap {
+  margin-top: 20px !important;
+}
+body.page-memories .stats-panel {
+  position: fixed;
+  bottom: 22px;
+  right: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  transition: right 300ms ease;
+}
+body.page-memories .stats-panel.collapsed {
+  right: -170px;
+}
+body.page-memories .stats-panel.collapsed .arrow {
+  transform: rotate(180deg);
+}
+body.page-memories .stats-toggle {
+  background: var(--Eclipse);
+  border: 1px ridge var(--Penumbra);
+  border-right: none;
+  border-radius: 6px 0 0 6px;
+  padding: 12px 8px;
+  color: var(--Moonlight);
+  font-size: 18px;
+  box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 32px;
+}
+body.page-memories .stats-toggle .arrow {
+  display: block;
+  transition: transform 300ms ease;
+}
+body.page-memories .stats-content {
+  background: var(--Eclipse);
+  border: 1px ridge var(--Penumbra);
+  border-right: none;
+  padding: 12px 14px;
+  box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 140px;
+}
+body.page-memories .stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+body.page-memories .stat-label {
+  font-family: "Kulture";
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--BabyPur);
+  opacity: 0.8;
+}
+body.page-memories .stat-value {
+  font-family: "SourceCode", "FairFax", monospace;
+  font-size: 16px;
+  color: var(--LinkLight);
+  font-weight: bold;
+}
+
+@media (max-width: 1300px) {
+  body.page-memories .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 12px auto 0;
+  }
+  body.page-memories .wrapper {
+    max-width: 1100px;
+    width: min(1100px, 100vw - 32px);
+    margin: 16px auto 24px;
+  }
+}
+@media (max-width: 800px) {
+  body.page-memories .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+  body.page-memories .wrapper {
+    max-width: none;
+    width: min(1200px, 100vw - 16px);
+    margin: 12px auto 24px;
+    padding: 0 8px;
+  }
+}
+@media (max-width: 700px) {
+  body.page-memories .stats-panel {
+    bottom: 10px;
+  }
+  body.page-memories .stats-panel.collapsed {
+    right: -160px;
+  }
+  body.page-memories .stats-content {
+    min-width: 160px;
+    padding: 12px 14px;
+  }
+  body.page-memories .stat-label {
+    font-size: 10px;
+  }
+  body.page-memories .stat-value {
+    font-size: 14px;
+  }
+}
+body.page-assignment1 {
+  text-align: center;
+  font-family: "FairFax", sans-serif;
+  color: #cdd9ee;
+}
+body.page-assignment1 .box {
+  background-color: rgba(19, 0, 27, 0.75);
+  padding: 16px;
+  border-radius: 6px;
+  border: 1px ridge rgba(78, 23, 107, 0.8745098039);
+  box-shadow: 3px 3px black;
+  color: #cdd9ee;
+  height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: 600px;
+  margin: 20px auto 50px;
+}
+body.page-assignment1 #you-might-wanna {
+  font-weight: bold;
+  color: #dbc9ff;
+  font-size: 18px;
+}
+body.page-assignment1 #shuffle-btn {
+  font-family: "FairFax", sans-serif;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #cdd9ee;
+  border: 1px solid rgba(78, 23, 107, 0.8745098039);
+  border-radius: 4px;
+}
+body.page-assignment1 #shuffle-btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.page-misc {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #111;
+  color: #fff;
+  font-family: "SourceCode", monospace;
+}
+body.page-misc a {
+  color: #dbc9ff;
+  text-decoration: none;
+}
+body.page-misc a:hover {
+  text-decoration: underline;
+}
+
+body.page-assignments {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #111;
+  color: #fff;
+  font-family: "SourceCode", monospace;
+}
+body.page-assignments a {
+  color: #dbc9ff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+body.page-assignments a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=bundle.css.map */

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../../css/bundle.css">
+  <title>You Might Wanna</title>
+</head>
+<body class="app-shell page-assignment1">
+
+<div class="box">
+    <p>
+      <span id="Signage"> Hello</span>
+    </p>
+
+</div>
+
+<div class="box">
+  <p>
+    <span id="you-might-wanna">Click the button for a suggestion...</span>
+  </p>
+  <input type="button" id="shuffle-btn" value="Shuffle">
+</div>
+
+<aside class="navigation" aria-label="Primary sidebar">
+            <nav>
+
+                <a href="../../pages/Index.html" id="Home">
+                    <img src="../../Images/Axiomatic_Apostrophe.png" alt="Picture of Minds">
+                </a>
+
+                <p class="nav-intro"> Go check out some stuff!! </p>
+
+                <a href="../../pages/Home.html">
+                        <img src="../../Images/icons/home.png" alt="Home icon"> H O M E — 01
+                </a>
+
+                <a href="../../pages/My Memories.html">
+                    <img src="../../Images/icons/About.png" alt="About icon"> A B O U T — 02
+
+                </a>
+                <a href="../../pages/The Journal.html">
+                    <img src="../../Images/icons/Log.png" alt="Log icon">L O G — 03
+                </a>
+                <a href="../../pages/Bookshelf.html">
+                   <img src="../../Images/icons/Books.png" alt="Bookshelf icon"> B O O K S — 04
+                </a>
+                <a href="../../pages/Letters.html">
+                    <img src="../../Images/icons/Mail.png" alt="Mail icon"> M A I L — 05
+                </a>
+                <a href="../../pages/Games.html">
+                    <img src="../../Images/icons/Games.png" alt="Game icon"> G A M E S — 06
+                </a>
+                <a href="../../pages/Misc.html">
+                    <img src="../../Images/icons/Misc.png" alt="Misc icon"> M I S C ∙ — 07
+                </a>
+
+            </nav>
+        </aside>
+
+<script>
+  // Array of suggestions
+  const youMightWanna = [
+    "turn off your computer and do something constructive",
+    "play a little racquetball",
+    "wash your car",
+    "cook dinner",
+    "join a funk band",
+    "travel to a foreign country",
+    "run for president",
+    "talk to a member of the opposite sex",
+    "lube your car",
+    "host a weenie roast",
+    "dig for buried treasure",
+    "milk a cow",
+    "have a yelling contest with your neighbor's dog",
+    "perform brain surgery",
+    "paint a yellow line in the center of your driveway",
+    "write your name in the snow",
+    "teach basket weaving to clams",
+    "sing welsh folk songs at the bank",
+    "plant trees on public property",
+    "confuse the person next to you",
+    "make a triangular table",
+    "hop, skip and jump",
+    "ride a train",
+    "organize your sock drawer, alphabetically",
+    "go bowling with your mom",
+    "train potato bugs to do tricks",
+    "make a quilt",
+    "publish a magazine about pencil shavings",
+    "eat lime jello with pineapple in it",
+    "pave a freeway",
+    "learn to draw",
+    "take up photography",
+    "learn to tell time",
+    "photocopy money",
+    "go out for pasta",
+    "sew a dress",
+    "bathe your iguana",
+    "go fishing",
+    "paint a strangers house in the middle of the night",
+    "take up windsurfing",
+    "change your hair style",
+    "sharpen your whiteboard markers",
+    "feed a toucan",
+    "enjoy the sun",
+    "do a crossword puzzle",
+    "buy some cool clothes",
+    "go to the beach",
+    "play croquet with your dad",
+    "water your plants",
+    "build a doll house",
+    "invite some friends over for salmon and white wine",
+    "not!",
+    "make a pizza or something",
+    "be like Sir Salas",
+    "goon"
+];
+
+</script>
+
+<script>
+  // Function to shuffle and display a random suggestion
+  function shuffleSuggestion() {
+    // Pick a random index from the array
+    const randomIndex = Math.floor(Math.random() * youMightWanna.length);
+
+    // Update the text inside the span
+    document.getElementById("you-might-wanna").textContent = "You might wanna " + youMightWanna[randomIndex];
+  }
+
+  // Add click event listener to the button
+  document.getElementById("shuffle-btn").addEventListener("click", shuffleSuggestion);
+</script>
+</body>
+</html>

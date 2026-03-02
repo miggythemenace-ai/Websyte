@@ -1,0 +1,136 @@
+body.page-index {
+  --Moonlight: #dfebff;
+  --PurpLight: #c885ff43;
+  --FlashLight: #cab6ff41;
+  --cursor-default: url(https://www.rw-designer.com/cursor-view/144663.png), auto;
+  --cursor-pointer: url(https://www.rw-designer.com/cursor-view/144662.png), pointer;
+
+  margin: 0;
+  background-image: url("../Images/background/seam.gif");
+  background-size: 200px 215px;
+  background-color: rgba(122, 0, 122, 0.6);
+  background-blend-mode: multiply;
+
+  #ToDream,
+  #AndI,
+  #ButTime,
+  #AndSo {
+    font-family: "Kulture";
+    letter-spacing: 10px;
+  }
+
+  #ToDream {
+    color: var(--PurpLight);
+    font-size: 35px;
+    margin: 35px 20px 0 50px;
+  }
+
+  #AndI {
+    color: var(--PurpLight);
+    font-size: 20px;
+    margin: -30px 20px 0 90px;
+  }
+
+  #ButTime,
+  #AndSo {
+    color: var(--FlashLight);
+    font-size: 15px;
+    position: fixed;
+    right: 24px;
+    text-align: justify;
+    max-width: 40ch;
+    white-space: normal;
+    margin: 0;
+    padding: 6px 10px;
+    background: transparent;
+  }
+
+  #ButTime { bottom: 80px; }
+  #AndSo { bottom: 22px; }
+
+  .ancient-wrap {
+    display: block;
+    margin: 24px auto;
+    max-width: 1000px;
+    width: min(1000px, calc(100vw - 40px));
+    position: relative;
+    isolation: isolate;
+    border-radius: 4px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      left: 7px;
+      right: -7px;
+      bottom: 8px;
+      pointer-events: none;
+      background: rgba(54, 28, 83, 0.18);
+      mix-blend-mode: overlay;
+      transition: background-color 180ms ease, opacity 180ms ease;
+      border-radius: 4px;
+    }
+
+    &:hover::after {
+      background: rgba(40, 7, 87, 0.754);
+    }
+  }
+
+  .ancient {
+    display: block;
+    width: 100%;
+    height: 580px;
+    border-radius: 4px;
+    mix-blend-mode: multiply;
+    opacity: 0.92;
+    filter: grayscale(16%) contrast(0.98) brightness(0.96);
+    border: #0c000f 8px ridge;
+    border-color: #4114552a;
+  }
+
+  a[href="Home.html"] {
+    display: block;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  body.page-index {
+    #ButTime,
+    #AndSo {
+      position: static;
+      margin: 20px 20px 0 auto;
+      padding: 0;
+      max-width: none;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  body.page-index {
+    #ButTime,
+    #AndSo {
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    #ToDream {
+      font-size: 28px;
+      margin-left: 20px;
+      letter-spacing: 6px;
+    }
+
+    #AndI {
+      font-size: 16px;
+      margin-left: 20px;
+      letter-spacing: 6px;
+    }
+
+    .ancient-wrap {
+      max-width: 92%;
+      width: min(92vw, calc(100vw - 20px));
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
