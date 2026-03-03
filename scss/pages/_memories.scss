@@ -1,0 +1,384 @@
+body.page-memories {
+  --Starlight: #fac372;
+  --Penumbra: #4e176bdf;
+  --Dawn: #f09c83;
+  --Moonlight: #cdd9ee;
+  --LinkLight: #e9f0ff;
+  --Eclipse: #13001beb;
+  --Midnight: #1a001f;
+  --Umbra: #0a0008;
+  --BabyPur: #dbc9ff;
+  --cursor-default: url(https://www.rw-designer.com/cursor-view/144663.png), auto;
+  --cursor-pointer: url(https://www.rw-designer.com/cursor-view/144662.png), pointer;
+
+  @font-face {
+    font-family: JMH;
+    src: url("https://raw.githubusercontent.com/miggythemenace-ai/Stuff/main/fonts/JMH%20Typewriter.ttf");
+  }
+
+  @font-face {
+    font-family: MOM;
+    src: url("https://raw.githubusercontent.com/miggythemenace-ai/Stuff/main/fonts/Mom%C2%ABt___.ttf");
+  }
+
+  * { box-sizing: border-box; }
+
+  margin: 0;
+  background-image: url("https://raw.githubusercontent.com/Axiomition/Stuff/main/Images/background/seam.gif");
+  background-size: 200px 215px;
+  background-color: rgba(122, 0, 122, 0.6);
+  background-blend-mode: multiply;
+
+  #LAIN { font-family: "MOM"; }
+  #TAG {
+    font-size: 25px;
+    margin-left: 0 !important;
+    text-align: left;
+  }
+
+  .wrapper {
+    max-width: none;
+    width: min(1200px, calc(100vw - 320px));
+    min-width: 320px;
+    margin: 20px 20px 20px 280px;
+    justify-content: center;
+    display: flex;
+    min-height: 11vh;
+  }
+
+  .boxes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding-left: 0;
+  }
+
+  .memory-box {
+    margin-left: 0;
+    width: 100%;
+    max-width: 1000px;
+    background-color: rgba(19, 0, 27, 0.75);
+    padding: 24px;
+    border-radius: 6px;
+    border: 1px ridge var(--Penumbra);
+    box-shadow: 3px 3px black;
+    color: var(--Moonlight);
+    min-height: 300px;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin: 0;
+      text-align: left;
+      font-family: "SourceCode";
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--Moonlight);
+      padding-right: 0;
+    }
+  }
+
+  .memory-header {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 20px;
+
+    h2 {
+      margin: 0 0 5px;
+      text-align: left;
+      font-size: 24px;
+      color: var(--LinkLight);
+    }
+
+    p {
+      margin: 0 0 10px;
+      text-align: left;
+      font-size: 12px;
+      color: var(--BabyPur);
+      opacity: 0.8;
+    }
+  }
+
+  .memory-header-info {
+    flex: 1;
+    min-width: 0;
+
+    p {
+      font-size: 15px !important;
+      margin-top: 20px !important;
+    }
+  }
+
+  #Address,
+  #Address2,
+  #Message {
+    font-size: 13px !important;
+    flex-basis: 100%;
+    color: var(--BabyPur);
+    opacity: 0.6;
+  }
+
+  #Address { margin-top: 10px !important; }
+  #Address2 { margin-top: -10px !important; }
+  #Message { font-size: 10px !important; margin: -5px 0 0 2px !important; }
+
+  .memory-image-circle {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    background-color: rgba(12, 0, 18, 0.8);
+    border: 2px ridge var(--Penumbra);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: transform 200ms ease;
+
+    &:hover { transform: scale(1.05); }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      border-radius: 50%;
+      transition: opacity 400ms ease;
+
+      &.fade-out { opacity: 0; }
+    }
+  }
+
+  .memory-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .memory-tag {
+    background-color: rgba(170, 147, 220, 0.3);
+    color: var(--BabyPur);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-family: "Kulture";
+    border: 1px solid rgba(170, 147, 220, 0.5);
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+
+    &:hover {
+      background-color: rgba(170, 147, 220, 0.5);
+      color: var(--LinkLight);
+      border-color: rgba(170, 147, 220, 0.8);
+    }
+
+    &.active {
+      background-color: rgba(170, 147, 220, 0.6);
+      color: var(--Starlight);
+      border-color: var(--Starlight);
+    }
+  }
+
+  .hidden { display: none !important; }
+
+  .memory-content-wrapper {
+    position: relative;
+    overflow: hidden;
+    overflow-anchor: none;
+    transition: height 220ms ease;
+  }
+
+  .memory-content {
+    opacity: 1;
+    transition: opacity 140ms ease;
+    will-change: opacity;
+  }
+
+  .memory-content.is-leaving {
+    opacity: 0;
+  }
+
+  .memory-content.is-entering {
+    opacity: 0;
+  }
+
+  .memory-section {
+    margin-bottom: 24px;
+
+    h3 {
+      margin: 0 0 12px;
+      text-align: left;
+      font-size: 18px;
+      color: var(--Moonlight);
+      letter-spacing: 1px;
+    }
+
+    p,
+    ul {
+      margin: 0 0 8px;
+      text-align: left;
+      font-size: 14px;
+      font-family: "SourceCode";
+      color: var(--Moonlight);
+      line-height: 1.5;
+    }
+
+    ul { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+
+    a {
+      color: var(--Moonlight);
+      text-decoration: none;
+
+      &:hover { text-decoration: underline; }
+    }
+  }
+
+  .memory-contact-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+  }
+
+  .contact-btn {
+    background-color: rgba(170, 147, 220, 0.25);
+    color: var(--LinkLight);
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: 1px solid rgba(170, 147, 220, 0.5);
+    font-family: "Kulture";
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+
+    &:hover {
+      background-color: rgba(170, 147, 220, 0.4);
+      color: var(--BabyPur);
+      border-color: var(--BabyPur);
+    }
+  }
+
+  .memory-title {
+    font-size: 65px;
+    margin-left: 0;
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .memory-name {
+    font-size: 50px;
+    text-align: left;
+  }
+  .memory-indent { text-indent: 25px; }
+  .memory-top-gap { margin-top: 20px !important; }
+
+  .stats-panel {
+    position: fixed;
+    bottom: 22px;
+    right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    transition: right 300ms ease;
+
+    &.collapsed {
+      right: -170px;
+
+      .arrow { transform: rotate(180deg); }
+    }
+  }
+
+  .stats-toggle {
+    background: var(--Eclipse);
+    border: 1px ridge var(--Penumbra);
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    padding: 12px 8px;
+    color: var(--Moonlight);
+    font-size: 18px;
+    box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 32px;
+
+    .arrow {
+      display: block;
+      transition: transform 300ms ease;
+    }
+  }
+
+  .stats-content {
+    background: var(--Eclipse);
+    border: 1px ridge var(--Penumbra);
+    border-right: none;
+    padding: 12px 14px;
+    box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    min-width: 140px;
+  }
+
+  .stat-item { display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-family: "Kulture"; font-size: 11px; letter-spacing: 2px; color: var(--BabyPur); opacity: 0.8; }
+  .stat-value { font-family: "SourceCode", "FairFax", monospace; font-size: 16px; color: var(--LinkLight); font-weight: bold; }
+}
+
+@media (max-width: 1300px) {
+  body.page-memories .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin: 12px auto 0;
+  }
+
+  body.page-memories .wrapper {
+    max-width: 1100px;
+    width: min(1100px, calc(100vw - 32px));
+    margin: 16px auto 24px;
+  }
+}
+
+@media (max-width: 800px) {
+  body.page-memories .navigation {
+    position: static;
+    width: 100%;
+    height: auto;
+    margin-top: 12px;
+  }
+
+  body.page-memories .wrapper {
+    max-width: none;
+    width: min(1200px, calc(100vw - 16px));
+    margin: 12px auto 24px;
+    padding: 0 8px;
+  }
+}
+
+@media (max-width: 700px) {
+  body.page-memories .stats-panel {
+    bottom: 10px;
+
+    &.collapsed { right: -160px; }
+  }
+
+  body.page-memories .stats-content {
+    min-width: 160px;
+    padding: 12px 14px;
+  }
+
+  body.page-memories .stat-label { font-size: 10px; }
+  body.page-memories .stat-value { font-size: 14px; }
+}

@@ -1,0 +1,40 @@
+body.page-assignment1 {
+  text-align: center;
+  font-family: "FairFax", sans-serif;
+  color: #cdd9ee;
+
+  .box {
+    background-color: rgba(19, 0, 27, 0.75);
+    padding: 16px;
+    border-radius: 6px;
+    border: 1px ridge #4e176bdf;
+    box-shadow: 3px 3px black;
+    color: #cdd9ee;
+    height: 240px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 20px auto 50px;
+  }
+
+  #you-might-wanna {
+    font-weight: bold;
+    color: #dbc9ff;
+    font-size: 18px;
+  }
+
+  #shuffle-btn {
+    font-family: "FairFax", sans-serif;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #cdd9ee;
+    border: 1px solid #4e176bdf;
+    border-radius: 4px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "verdant-buoyant-dreams",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": {
+    "build:css": "sass scss/main.scss css/bundle.css --style=expanded",
+    "watch:css": "sass --watch scss/main.scss:css/bundle.css --style=expanded"
+  },
+  "devDependencies": {
+    "sass": "^1.93.2"
+  }
+}
